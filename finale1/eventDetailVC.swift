@@ -54,7 +54,7 @@ class eventDetailVC: UIViewController,PayPalPaymentDelegate {
         case "Set reminder":
             let todoItem = TodoItem(eventName: datEvent.name, eventDate: date, eventStartTime: date, eventLocation: datEvent.address, UUID: "1111")
             TodoList.sharedInstance.addItem(todoItem)
-            
+            notificationadded()
             
 //            println("reminder not done yet!")
 //            var eventStore : EKEventStore = EKEventStore()
@@ -163,7 +163,12 @@ class eventDetailVC: UIViewController,PayPalPaymentDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    func notificationadded(){
+        let alertController = UIAlertController (title: "", message : "Alarm has successfully added",preferredStyle:UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler:{(action: UIAlertAction!) in}))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+
     func areYouSure(fee: Int, eventIdIn:String, userIdIn:String){
         let alertController = UIAlertController(title: "", message: "The attendance fee for this event is \(toString(fee))AUD, do you want to join?",preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Join", style: .Default, handler: {(action: UIAlertAction!) in

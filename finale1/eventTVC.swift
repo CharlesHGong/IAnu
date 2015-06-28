@@ -25,71 +25,71 @@ class eventTVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     var allEventForCoreStorage:NSMutableArray = []
     
-//    // soring buttuon tart
-//    var sortedName = true;
-//    @IBAction func sortByName(sender: UIButton) {
-//        if sortedName == true  {
-//            tCMI2.allEvents.sort() {$0.name.capitalizedString < $1.name.capitalizedString};
-//            sortedName = false;
-//            sortedSize = true;     //reset
-//            sortedJoined = true    //reset
-//            sortedDate = true;     //reset
-//        }
-//        else {
-//            tCMI2.allEvents.sort() {$0.name.capitalizedString > $1.name.capitalizedString};
-//            sortedName = true;
-//        }
-//        tableview2.reloadData()
-//    }
-//    var sortedSize = true;
-//    @IBAction func sortBySize(sender: UIButton) {
-//        if sortedSize == true  {
-//            tCMI2.allEvents.sort() {$0.joined > $1.joined};
-//            sortedSize = false;
-//            sortedName = true;     //reset
-//            sortedDate = true;     //reset
-//            sortedJoined = true    //reset
-//        }
-//        else {
-//            tCMI2.allEvents.sort() {$0.joined < $1.joined};
-//            sortedSize = true;
-//        }
-//        
-//        tableview2.reloadData()
-//    }
-//    var sortedJoined = true;
-//    @IBAction func sortByJoined(sender: UIButton) {
-//        if sortedJoined == true  {
-//            tCMI2.allEvents.sort() {$0.joinState > $1.joinState};
-//            sortedJoined = false;
-//            sortedDate = true;     //reset
-//            sortedName = true;     //reset
-//            sortedSize = true      //reset
-//        }
-//        else {
-//            tCMI1.tableItems.sort() {$0.joinState < $1.joinState};
-//            sortedJoined = true;
-//        }
-//        
-//        tableview2.reloadData()
-//    }
-//    var sortedDate = true;
-//    @IBAction func sortedByDate(sender: UIButton) {
-//        if sortedDate == true  {
-//            //            tCMI1.tableItems.sort() {$0.timeStart > $1.timeStart};
-//            sortedDate = false;
-//            sortedJoined = true;   //reset
-//            sortedSize = true;     //reset
-//            sortedName = true      //reset
-//        }
-//        else {
-//            //            tCMI1.tableItems.sort() {$0.date < $1.date};
-//            sortedDate = true;
-//        }
-//        
-//        tableview2.reloadData()
-//    }
-//    //sorting buttuon ends
+    // soring buttuon tart
+    var sortedName = true;
+    @IBAction func sortByName(sender: UIButton) {
+        if sortedName == true  {
+            tCMI2.allEvents.sort() {$0.name.capitalizedString < $1.name.capitalizedString};
+            sortedName = false;
+            sortedSize = true;     //reset
+            sortedJoined = true    //reset
+            sortedDate = true;     //reset
+        }
+        else {
+            tCMI2.allEvents.sort() {$0.name.capitalizedString > $1.name.capitalizedString};
+            sortedName = true;
+        }
+        tableview2.reloadData()
+    }
+    var sortedSize = true;
+    @IBAction func sortBySize(sender: UIButton) {
+        if sortedSize == true  {
+            tCMI2.allEvents.sort() {$0.joined > $1.joined};
+            sortedSize = false;
+            sortedName = true;     //reset
+            sortedDate = true;     //reset
+            sortedJoined = true    //reset
+        }
+        else {
+            tCMI2.allEvents.sort() {$0.joined < $1.joined};
+            sortedSize = true;
+        }
+        
+        tableview2.reloadData()
+    }
+    var sortedJoined = true;
+    @IBAction func sortByJoined(sender: UIButton) {
+        if sortedJoined == true  {
+            tCMI2.allEvents.sort() {$0.joinState > $1.joinState};
+            sortedJoined = false;
+            sortedDate = true;     //reset
+            sortedName = true;     //reset
+            sortedSize = true      //reset
+        }
+        else {
+            tCMI1.tableItems.sort() {$0.joinState < $1.joinState};
+            sortedJoined = true;
+        }
+        
+        tableview2.reloadData()
+    }
+    var sortedDate = true;
+    @IBAction func sortedByDate(sender: UIButton) {
+        if sortedDate == true  {
+            //            tCMI1.tableItems.sort() {$0.timeStart > $1.timeStart};
+            sortedDate = false;
+            sortedJoined = true;   //reset
+            sortedSize = true;     //reset
+            sortedName = true      //reset
+        }
+        else {
+            //            tCMI1.tableItems.sort() {$0.date < $1.date};
+            sortedDate = true;
+        }
+        
+        tableview2.reloadData()
+    }
+    //sorting buttuon ends
     
     
     
