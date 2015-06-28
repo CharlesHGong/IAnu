@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Parse.setApplicationId("pNx2MGRTQOjkNXX1sXF6cyMzWZ8wzmwNOg3SqqBx", clientKey: "0nZyhX16WSJIK0DeLYbtVkjMqF24To1v4pYHUrBb")
         
+        // use notification
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sound, categories: nil))
+        
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         var storyboard = UIStoryboard(name: "Main", bundle: nil)

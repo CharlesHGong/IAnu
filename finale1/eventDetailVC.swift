@@ -9,12 +9,18 @@
 import UIKit
 import EventKit
 
+
+
 class eventDetailVC: UIViewController,PayPalPaymentDelegate {
+    
     //paypal
     var config = PayPalConfiguration()
     let newEnvironment = "live"
     var acceptCreditCards: Bool = true
     var environment:String = "live"
+    
+    
+    
     @IBOutlet weak var eventTitle: UINavigationItem!
     @IBOutlet weak var eventPic: UIImageView!
     @IBOutlet weak var eventName: UILabel!
@@ -31,7 +37,12 @@ class eventDetailVC: UIViewController,PayPalPaymentDelegate {
     @IBAction func join(sender: UIButton) {
         var datEvent = getDatEvent()
         
-        //if join, prompt for pay and price, then if yes, go to paypal if paypal yes, then setstatus. 
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZ"
+        let date:NSDate = dateFormatter.dateFromString("2015-06-28 15:36:00 +1000")!
+        
+
+        //if join, prompt for pay and price, then if yes, go to paypal if paypal yes, then setstatus.
         //if paynow, prompt for pay and price, samo
         //if Joined, no reaction.
         
@@ -41,31 +52,33 @@ class eventDetailVC: UIViewController,PayPalPaymentDelegate {
         case "Pay Now":
             payAlert(datEvent.fee, eventIdIn: datEvent.eventID, userIdIn: PFUser.currentUser().objectId)
         case "Set reminder":
-            println("reminder not done yet!")
-            var eventStore : EKEventStore = EKEventStore()
-            // 'EKEntityTypeReminder' or 'EKEntityTypeEvent'
-            eventStore.requestAccessToEntityType(EKEntityTypeEvent, completion: {
-                granted, error in
-                if (granted) && (error == nil) {
-                    println("granted \(granted)")
-                    println("error  \(error)")
-                    
-                    var event:EKEvent = EKEvent(eventStore: eventStore)
-                    event.title = "Test Title"
-                    event.startDate = NSDate()
-                    event.endDate = NSDate()
-                    event.notes = "This is a note"
-                    event.calendar = eventStore.defaultCalendarForNewEvents
-                    eventStore.saveEvent(event, span: EKSpanThisEvent, error: nil)
-                    println("Saved Event")
-                }
-            })
+            let todoItem = TodoItem(eventName: datEvent.name, eventDate: date, eventStartTime: date, eventLocation: datEvent.address, UUID: "1111")
+            TodoList.sharedInstance.addItem(todoItem)
+            
+            
+//            println("reminder not done yet!")
+//            var eventStore : EKEventStore = EKEventStore()
+//            // 'EKEntityTypeReminder' or 'EKEntityTypeEvent'
+//            eventStore.requestAccessToEntityType(EKEntityTypeEvent, completion: {
+//                granted, error in
+//                if (granted) && (error == nil) {
+//                    println("granted \(granted)")
+//                    println("error  \(error)")
+//                    
+//                    var event:EKEvent = EKEvent(eventStore: eventStore)
+//                    event.title = "Test Title"
+//                    event.startDate = NSDate()
+//                    event.endDate = NSDate()
+//                    event.notes = "This is a note"
+//                    event.calendar = eventStore.defaultCalendarForNewEvents
+//                    eventStore.saveEvent(event, span: EKSpanThisEvent, error: nil)
+//                    println("Saved Event")
+//                }
+//            })
         default:
             println("datJoinButton")
         }
     }
-    
-    
     
     
     
@@ -93,6 +106,8 @@ class eventDetailVC: UIViewController,PayPalPaymentDelegate {
         location.text = datEvent.address
         holdBy.text = datEvent.holdBy
         eventDescription.text = datEvent.desc
+        
+        //set notification
         
         
         //Paypal 
@@ -262,7 +277,6 @@ class eventDetailVC: UIViewController,PayPalPaymentDelegate {
         }
         
     }
-    // Paypal ends
     
     // PayPalPaymentDelegate
     
@@ -308,7 +322,7 @@ class eventDetailVC: UIViewController,PayPalPaymentDelegate {
         return datEvent
     }
 
-
+    
 }
 
 

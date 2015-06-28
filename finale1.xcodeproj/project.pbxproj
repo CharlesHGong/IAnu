@@ -51,6 +51,7 @@
 		18FE8A661AB3A2E70089B908 /* backgroundPic.png in Resources */ = {isa = PBXBuildFile; fileRef = 18FE8A651AB3A2E70089B908 /* backgroundPic.png */; };
 		1A2B1FEA1B382D0700BA4211 /* cnaTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B1FE91B382D0700BA4211 /* cnaTVC.swift */; };
 		1A2B1FEC1B382D2A00BA4211 /* eventTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B1FEB1B382D2A00BA4211 /* eventTVC.swift */; };
+		1A76FE861B3FB24B009899A6 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A76FE851B3FB24B009899A6 /* TodoList.swift */; };
 		1A86933E1B3AC396001FBCAC /* tableCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A86933D1B3AC396001FBCAC /* tableCellManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,7 @@
 		18FE8A651AB3A2E70089B908 /* backgroundPic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundPic.png; sourceTree = "<group>"; };
 		1A2B1FE91B382D0700BA4211 /* cnaTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cnaTVC.swift; sourceTree = "<group>"; };
 		1A2B1FEB1B382D2A00BA4211 /* eventTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventTVC.swift; sourceTree = "<group>"; };
+		1A76FE851B3FB24B009899A6 /* TodoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		1A86933D1B3AC396001FBCAC /* tableCellManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tableCellManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,6 +231,7 @@
 				18B0FA141A509E71004A2EFE /* cnaTableViewCell.xib */,
 				18A926F41A7407A3007791CB /* eventTableViewCell.xib */,
 				185F7BAB1A7092E400E205CE /* PayPalMobile */,
+				1A76FE851B3FB24B009899A6 /* TodoList.swift */,
 			);
 			path = finale1;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				18DFD4D41AAC4F39003D3D39 /* UIImageViewExtension.swift in Sources */,
 				1863DA9D1A6D02E000EA0B01 /* eventDetailVC.swift in Sources */,
 				18FDADAF1A5CE55D009AA3D9 /* cnaDetailVC.swift in Sources */,
+				1A76FE861B3FB24B009899A6 /* TodoList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
